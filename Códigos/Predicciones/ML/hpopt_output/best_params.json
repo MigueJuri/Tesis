@@ -1,0 +1,15 @@
+{
+  "objective": "regression",
+  "metric": "rmse",
+  "verbose": -1,
+  "random_state": 42,
+  "n_estimators": 127,
+  "learning_rate": 0.07305652147420712,
+  "num_leaves": 120,
+  "max_depth": 7,
+  "min_child_samples": 69,
+  "reg_lambda": 4.61367906014869,
+  "reg_alpha": 0.0071048456403621195,
+  "subsample": 0.5187062780880899,
+  "colsample_bytree": 0.7774262346957417
+}
