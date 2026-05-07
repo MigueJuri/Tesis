@@ -1,0 +1,11 @@
+# Local secrets
+Códigos/Tools/.env
+
+# Files over GitHub 100MB limit
+Códigos/Tools/Dollar Bars/saved_data/dollar_bars.csv
+Códigos/Tools/Dollar Bars/saved_data/saved_data/dollar_bars.csv
+Códigos/Tools/Dollar Bars/raw_tick_data/ES_Trades.csv/ES_Trades.csv
+Códigos/Data/sp500_2015_to_2025_1Min.csv
+Códigos/Data/sp500_data_2015-01-12_to_2026-01-02.csv
+Códigos/Cluster/sp500_data_2015-01-12_to_2026-01-02.csv
+Códigos/PairTrading/sp500_data_2015-01-12_to_2026-01-02.csv
