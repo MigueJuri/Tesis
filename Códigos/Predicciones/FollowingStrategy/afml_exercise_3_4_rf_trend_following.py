@@ -281,8 +281,8 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--min-ret", type=float, default=cfg.min_ret)
     parser.add_argument("--train-frac", type=float, default=cfg.train_frac)
     parser.add_argument("--random-state", type=int, default=cfg.random_state)
-    parser.add_argument("--pt", type=float, default=cfg.pt_sl[0], help="Profit-take multiplier.")
-    parser.add_argument("--sl", type=float, default=cfg.pt_sl[1], help="Stop-loss multiplier.")
+    parser.add_argument("--pt-multiplier", type=float, default=cfg.pt_sl[0], help="Profit-take multiplier.")
+    parser.add_argument("--sl-multiplier", type=float, default=cfg.pt_sl[1], help="Stop-loss multiplier.")
     parser.add_argument("--vertical-days", type=int, default=cfg.vertical_days, help="Vertical barrier in days.")
     return parser.parse_args()
 
@@ -297,7 +297,7 @@ def main() -> None:
         min_ret=args.min_ret,
         train_frac=args.train_frac,
         random_state=args.random_state,
-        pt_sl=(args.pt, args.sl),
+        pt_sl=(args.pt_multiplier, args.sl_multiplier),
         vertical_days=args.vertical_days,
     )
     run(config=config, data_path=args.data_path, output_dir=args.output_dir)
