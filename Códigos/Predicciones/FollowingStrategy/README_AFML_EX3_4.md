@@ -11,26 +11,27 @@ This script implements Exercise 3.4 from *Advances in Financial Machine Learning
 
 ## File
 
-- `/home/runner/work/Tesis/Tesis/Códigos/Predicciones/FollowingStrategy/afml_exercise_3_4_rf_trend_following.py`
+- `Códigos/Predicciones/FollowingStrategy/afml_exercise_3_4_rf_trend_following.py`
 
 ## Run
 
 ```bash
-python /home/runner/work/Tesis/Tesis/Códigos/Predicciones/FollowingStrategy/afml_exercise_3_4_rf_trend_following.py
+cd /path/to/Tesis
+python Códigos/Predicciones/FollowingStrategy/afml_exercise_3_4_rf_trend_following.py
 ```
 
 Optional parameters:
 
 ```bash
-python /home/runner/work/Tesis/Tesis/Códigos/Predicciones/FollowingStrategy/afml_exercise_3_4_rf_trend_following.py \
-  --data-path /home/runner/work/Tesis/Tesis/Códigos/Data/sp500_data_only_1993-01-29_to_2026-01-02.csv \
-  --pt 1 --sl 2 --vertical-days 1
+cd /path/to/Tesis
+python Códigos/Predicciones/FollowingStrategy/afml_exercise_3_4_rf_trend_following.py \
+  --data-path Códigos/Data/sp500_data_only_1993-01-29_to_2026-01-02.csv \
+  --pt-multiplier 1 --sl-multiplier 2 --vertical-days 1
 ```
 
 ## Outputs
 
 By default, outputs are written to:
 
-- `/home/runner/work/Tesis/Tesis/Códigos/Predicciones/FollowingStrategy/outputs_ex3_4/afml_ex3_4_labeled_events.csv`
-- `/home/runner/work/Tesis/Tesis/Códigos/Predicciones/FollowingStrategy/outputs_ex3_4/afml_ex3_4_test_predictions.csv`
-
+- `Códigos/Predicciones/FollowingStrategy/outputs_ex3_4/afml_ex3_4_labeled_events.csv`
+- `Códigos/Predicciones/FollowingStrategy/outputs_ex3_4/afml_ex3_4_test_predictions.csv`
