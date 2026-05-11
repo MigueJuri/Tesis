@@ -29,6 +29,10 @@ python Códigos/Predicciones/FollowingStrategy/afml_exercise_3_4_rf_trend_follow
   --pt-multiplier 1 --sl-multiplier 2 --vertical-days 1
 ```
 
+In this exercise setup, `ptSl = [1,2]` means:
+- `--pt-multiplier 1` → profit-take barrier
+- `--sl-multiplier 2` → stop-loss barrier
+
 ## Outputs
 
 By default, outputs are written to:

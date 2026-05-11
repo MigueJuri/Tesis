@@ -113,10 +113,13 @@ def apply_pt_sl_on_t1(close: pd.Series, events: pd.DataFrame, pt_sl: tuple[float
             continue
 
         path = close.iloc[start_pos : end_pos + 1]
-        if len(path) < 2:
+        if path.empty:
             continue
         entry = path.iloc[0]
-        path_ret = (path.iloc[1:] / entry - 1.0) * event["side"]
+        path_after_entry = path.iloc[1:]
+        if path_after_entry.empty:
+            continue
+        path_ret = (path_after_entry / entry - 1.0) * event["side"]
 
         pt_mult, sl_mult = pt_sl
         if pt_mult > 0:
@@ -153,7 +156,7 @@ def get_meta_labeled_events(
     candidates.columns = ["t1", "pt", "sl"]
     events["t_hit"] = candidates.min(axis=1)
 
-    is_pt_first = pd.notna(hits["pt"]) & ((hits["pt"] == events["t_hit"]))
+    is_pt_first = pd.notna(hits["pt"]) & (hits["pt"] == events["t_hit"])
     events["meta_label"] = is_pt_first.astype(int)
     return events
 
