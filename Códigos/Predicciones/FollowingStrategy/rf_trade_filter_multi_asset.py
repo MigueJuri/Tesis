@@ -379,7 +379,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--daily-vol-span", type=int, default=cfg.daily_vol_span)
     parser.add_argument("--min-ret", type=float, default=cfg.min_ret)
     parser.add_argument("--train-frac", type=float, default=cfg.train_frac)
-    parser.add_argument("--test-asset-fraction", type=float, default=cfg.test_asset_fraction)
+    parser.add_argument(
+        "--test-asset-fraction",
+        type=float,
+        default=cfg.test_asset_fraction,
+        help="Fraction of assets reserved for testing (at least one asset in train/test).",
+    )
     parser.add_argument("--random-state", type=int, default=cfg.random_state)
     parser.add_argument("--pt-multiplier", type=float, default=cfg.pt_sl[0])
     parser.add_argument("--sl-multiplier", type=float, default=cfg.pt_sl[1])

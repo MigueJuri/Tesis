@@ -44,12 +44,14 @@ python "g:/Mi unidad/2026/Tesis-1/Códigos/Predicciones/FollowingStrategy/train_
 
 - Input formats:
   1. Stacked CSV with columns `asset`, `timestamp` (or `Date`), `Open`, `High`, `Low`, `Close`, `Volume`
-  2. Directory containing one OHLCV CSV per asset (same column names as above)
+  2. Directory containing one OHLCV CSV per asset (no `asset` column required)
 
 ```powershell
 $env:PYTHONPATH='g:/Mi unidad/2026/Tesis-1/Códigos/Predicciones/FollowingStrategy'
 python "g:/Mi unidad/2026/Tesis-1/Códigos/Predicciones/FollowingStrategy/rf_trade_filter_multi_asset.py" --data-path "PATH_TO_OHLCV_CSV_OR_DIR"
 ```
+
+- The asset split always keeps at least one asset in train and test; with two assets this becomes a 1/1 split.
 
 Outputs in `--out`:
 - `rf_pooled.joblib`
