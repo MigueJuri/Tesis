@@ -23,6 +23,7 @@ This implementation refactors the original notebook flow into reusable Python mo
 - `data_loader.py`: reads stacked multi-asset CSV.
 - `rf_helpers.py`: event extraction, labeling, features, sample weights, position/backtest helpers.
 - `train_rf.py`: full training + evaluation + artifact/report save.
+- `rf_trade_filter_multi_asset.py`: multi-asset EWMA trend-following + RF meta-labeling with OHLCV inputs.
 - `run_train_test.py`: tiny synthetic runner.
 - `tests/test_multi_asset_pipeline.py`: synthetic integration test script.
 
@@ -37,6 +38,15 @@ pip install -r "g:/Mi unidad/2026/Tesis-1/Códigos/Predicciones/FollowingStrateg
 ```powershell
 $env:PYTHONPATH='g:/Mi unidad/2026/Tesis-1/Códigos/Predicciones/FollowingStrategy'
 python "g:/Mi unidad/2026/Tesis-1/Códigos/Predicciones/FollowingStrategy/train_rf.py" --data "PATH_TO_STACKED_CSV" --out "g:/Mi unidad/2026/Tesis-1/Códigos/Predicciones/FollowingStrategy/models"
+```
+
+## Run Multi-Asset OHLCV Training
+
+- Input: CSV with columns `asset`, `timestamp` (or `Date`), `Open`, `High`, `Low`, `Close`, `Volume`, or a directory of per-asset OHLCV CSV files.
+
+```powershell
+$env:PYTHONPATH='g:/Mi unidad/2026/Tesis-1/Códigos/Predicciones/FollowingStrategy'
+python "g:/Mi unidad/2026/Tesis-1/Códigos/Predicciones/FollowingStrategy/rf_trade_filter_multi_asset.py" --data-path "PATH_TO_OHLCV_CSV_OR_DIR"
 ```
 
 Outputs in `--out`:
