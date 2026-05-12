@@ -42,7 +42,9 @@ python "g:/Mi unidad/2026/Tesis-1/Códigos/Predicciones/FollowingStrategy/train_
 
 ## Run Multi-Asset OHLCV Training
 
-- Input: CSV with columns `asset`, `timestamp` (or `Date`), `Open`, `High`, `Low`, `Close`, `Volume`, or a directory of per-asset OHLCV CSV files.
+- Input formats:
+  1. Stacked CSV with columns `asset`, `timestamp` (or `Date`), `Open`, `High`, `Low`, `Close`, `Volume`
+  2. Directory containing one OHLCV CSV per asset (same column names as above)
 
 ```powershell
 $env:PYTHONPATH='g:/Mi unidad/2026/Tesis-1/Códigos/Predicciones/FollowingStrategy'

@@ -51,22 +51,22 @@ def _normalize_ohlcv_columns(df: pd.DataFrame) -> pd.DataFrame:
                 return col
         return None
 
-    open_col = find_col("Open")
-    high_col = find_col("High")
-    low_col = find_col("Low")
-    close_col = find_col("Close")
-    volume_col = find_col("Volume")
-    missing = [name for name, col in [
-        ("Open", open_col),
-        ("High", high_col),
-        ("Low", low_col),
-        ("Close", close_col),
-        ("Volume", volume_col),
-    ] if col is None]
+    required_cols = ["Open", "High", "Low", "Close", "Volume"]
+    column_map = {name: find_col(name) for name in required_cols}
+    missing = [name for name, col in column_map.items() if col is None]
     if missing:
         raise ValueError(f"Missing OHLCV columns: {', '.join(missing)}")
 
-    out = df[[timestamp_col, open_col, high_col, low_col, close_col, volume_col]].copy()
+    out = df[
+        [
+            timestamp_col,
+            column_map["Open"],
+            column_map["High"],
+            column_map["Low"],
+            column_map["Close"],
+            column_map["Volume"],
+        ]
+    ].copy()
     out.columns = ["timestamp", "Open", "High", "Low", "Close", "Volume"]
     out = out.set_index("timestamp").sort_index()
     out = out.apply(pd.to_numeric, errors="coerce")
@@ -112,7 +112,7 @@ def get_ewma_crossover_events(close: pd.Series, fast_span: int, slow_span: int, 
     return out[out["side"] != 0]
 
 
-def get_daily_vol(close: pd.Series, span0: int = 100) -> pd.Series:
+def get_daily_vol(close: pd.Series, volatility_span: int = 100) -> pd.Series:
     prev_day_pos = close.index.searchsorted(close.index - pd.Timedelta(days=1))
     prev_day_pos = prev_day_pos[prev_day_pos > 0]
     prev_idx = pd.Series(
@@ -120,7 +120,7 @@ def get_daily_vol(close: pd.Series, span0: int = 100) -> pd.Series:
         index=close.index[close.shape[0] - prev_day_pos.shape[0] :],
     )
     daily_ret = close.loc[prev_idx.index] / close.loc[prev_idx.values].values - 1
-    return daily_ret.ewm(span=span0).std()
+    return daily_ret.ewm(span=volatility_span).std()
 
 
 def add_vertical_barrier(t_events: pd.Index, close: pd.Series, num_days: int = 1) -> pd.Series:
@@ -172,18 +172,18 @@ def get_meta_labeled_events(
     close: pd.Series,
     events_cross: pd.DataFrame,
     pt_sl: tuple[float, float],
-    trgt: pd.Series,
+    target: pd.Series,
     min_ret: float,
     t1: pd.Series,
 ) -> pd.DataFrame:
-    trgt = trgt.reindex(events_cross.index).dropna()
-    trgt = trgt[trgt > min_ret]
-    if trgt.empty:
+    target = target.reindex(events_cross.index).dropna()
+    target = target[target > min_ret]
+    if target.empty:
         return pd.DataFrame(columns=["t1", "trgt", "side", "t_hit", "meta_label"])
 
-    events = pd.DataFrame(index=trgt.index)
+    events = pd.DataFrame(index=target.index)
     events["t1"] = t1.reindex(events.index)
-    events["trgt"] = trgt
+    events["trgt"] = target
     events["side"] = events_cross.loc[events.index, "side"]
 
     hits = apply_pt_sl_on_t1(close=close, events=events, pt_sl=pt_sl)
@@ -200,7 +200,7 @@ def build_features(
     ohlcv: pd.DataFrame, events_cross: pd.DataFrame, fast_span: int, slow_span: int
 ) -> pd.DataFrame:
     close = ohlcv["Close"]
-    open_px = ohlcv["Open"]
+    open_price = ohlcv["Open"]
     high = ohlcv["High"]
     low = ohlcv["Low"]
     volume = ohlcv["Volume"]
@@ -219,7 +219,7 @@ def build_features(
     ewma_gap = (fast - slow) / close
 
     hl_range = (high - low) / close
-    co_ret = (close - open_px) / open_px.replace(0, np.nan)
+    co_ret = (close - open_price) / open_price.replace(0, np.nan)
     vol_chg = np.log(volume / volume.shift(1)).replace([np.inf, -np.inf], np.nan)
 
     idx = events_cross.index
@@ -270,13 +270,13 @@ def orchestrate(data_path: Path, out_dir: Path, config: Config) -> dict:
         events_cross = get_ewma_crossover_events(close, config.fast_span, config.slow_span, config.burn_in)
         if events_cross.empty:
             continue
-        trgt = get_daily_vol(close, span0=config.daily_vol_span)
+        target = get_daily_vol(close, volatility_span=config.daily_vol_span)
         t1 = add_vertical_barrier(events_cross.index, close, num_days=config.vertical_days)
         labeled = get_meta_labeled_events(
             close=close,
             events_cross=events_cross,
             pt_sl=config.pt_sl,
-            trgt=trgt,
+            target=target,
             min_ret=config.min_ret,
             t1=t1,
         )
