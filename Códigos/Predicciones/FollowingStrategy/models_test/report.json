@@ -1,0 +1,27 @@
+{
+  "metrics": {
+    "accuracy": 0.6451612903225806,
+    "f1_macro": 0.4372759856630824,
+    "n_train": 88,
+    "n_test": 31,
+    "train_assets": [
+      "A",
+      "B"
+    ],
+    "test_assets": [
+      "C"
+    ]
+  },
+  "per_asset_summary": {
+    "C": {
+      "total_return": 0.17839436665390962,
+      "max_drawdown": 0.11344178629266988,
+      "sharpe": 0.9625003492532743
+    }
+  },
+  "portfolio_summary": {
+    "total_return": 0.17839436665390962,
+    "max_drawdown": 0.11344178629266988,
+    "sharpe": 0.9625003492532743
+  }
+}
