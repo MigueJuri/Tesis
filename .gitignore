@@ -1,6 +1,10 @@
 # Local secrets
 Códigos/Tools/.env
 
+# Python cache
+__pycache__/
+*.py[cod]
+
 # Files over GitHub 100MB limit
 Códigos/Tools/Dollar Bars/saved_data/dollar_bars.csv
 Códigos/Tools/Dollar Bars/saved_data/saved_data/dollar_bars.csv
