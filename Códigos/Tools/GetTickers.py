@@ -65,11 +65,11 @@ def save_tickers_to_file(tickers: list, output_file: str = "tickers.txt") -> Pat
 
 
 if __name__ == "__main__":
-    sector = "All"  # Use "All" to export all S&P 500 tickers
+    sector = "Energy"  # Use "All" to export all S&P 500 tickers
     tickers = get_sp500_tickers_by_sector(sector)
     saved_file = save_tickers_to_file(
         tickers,
-        rf"G:\Mi unidad\2026\Tesis\Códigos\Data\tickers\sp500_tickers_{sector}.txt",
+        rf"G:\Mi unidad\2026\Tesis-1\Códigos\Data\tickers\sp500_tickers_{sector}.txt",
 
     )
     print(f"Saved {len(tickers)} tickers to {saved_file.resolve()}")
