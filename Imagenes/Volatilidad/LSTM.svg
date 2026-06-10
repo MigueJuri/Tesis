@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1000 600"
+   width="1000"
+   height="600"
+   version="1.1"
+   id="svg52"
+   sodipodi:docname="LSTM.svg"
+   inkscape:version="1.4.4 (1:1.4.4+202605061435+dcaf3e7d9e)"
+   inkscape:export-filename="LSTM_ink.png"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview52"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.59789807"
+     inkscape:cx="614.65326"
+     inkscape:cy="275.13051"
+     inkscape:window-width="1914"
+     inkscape:window-height="934"
+     inkscape:window-x="0"
+     inkscape:window-y="112"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg52" />
+  <defs
+     id="defs1">
+    <rect
+       x="518.00263"
+       y="34.296977"
+       width="357.16163"
+       height="25.653206"
+       id="rect1" />
+    <rect
+       x="633.90277"
+       y="3.5479631"
+       width="358.34427"
+       height="767.54272"
+       id="rect54" />
+    <marker
+       id="arrow"
+       viewBox="0 0 10 10"
+       refX="6"
+       refY="5"
+       markerWidth="6"
+       markerHeight="6"
+       orient="auto-start-reverse"
+       preserveAspectRatio="xMidYMid">
+      <path
+         d="M 0,1 10,5 0,9 Z"
+         fill="#333333"
+         id="path1" />
+    </marker>
+    <style
+       id="style1">
+      .title-sub { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 14px; fill: #555; font-weight: 500; letter-spacing: 1px; }
+      .title-main { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 28px; fill: #000; font-weight: bold; }
+      .box-text { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; fill: #ffffff; font-weight: bold; text-anchor: middle; dominant-baseline: middle; }
+      .box-text-dark { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 13px; fill: #333333; font-weight: bold; text-anchor: middle; dominant-baseline: middle; }
+      .annotation-title { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; fill: #000000; font-weight: bold; }
+      .annotation { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; fill: #333333; }
+      .dim { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 12px; fill: #666666; font-style: italic; }
+    </style>
+  </defs>
+  <rect
+     x="298.74612"
+     y="63.975529"
+     width="236.69511"
+     height="47.339024"
+     rx="6.5748639"
+     fill="#2b5c8f"
+     id="rect10"
+     style="stroke-width:1.31497" />
+  <text
+     x="417.09369"
+     y="87.645042"
+     class="box-text"
+     id="text11"
+     style="stroke-width:1.31497">INPUT</text>
+  <rect
+     x="298.74612"
+     y="235.7482"
+     width="236.69511"
+     height="47.339024"
+     rx="6.5748639"
+     fill="#708090"
+     id="rect11"
+     style="stroke-width:1.31497" />
+  <text
+     x="417.09369"
+     y="259.41772"
+     class="box-text"
+     id="text12"
+     style="stroke-width:1.31497">PRE-LAYERNORM</text>
+  <rect
+     x="325.04559"
+     y="142.07869"
+     width="184.09621"
+     height="47.339024"
+     rx="6.5748639"
+     fill="#708090"
+     id="rect12"
+     style="stroke-width:1.31497" />
+  <text
+     x="417.09369"
+     y="165.74821"
+     class="box-text"
+     id="text13"
+     style="stroke-width:1.31497">LINEAR</text>
+  <rect
+     x="298.74612"
+     y="313.5209"
+     width="236.69511"
+     height="78.898369"
+     rx="6.5748639"
+     fill="#d0e0f0"
+     stroke="#2b5c8f"
+     stroke-width="1.97246"
+     id="rect13" />
+  <text
+     x="417.09369"
+     y="352.97009"
+     class="box-text-dark"
+     id="text14"
+     style="stroke-width:1.31497">LSTM (hidden=16)</text>
+  <rect
+     x="298.74612"
+     y="419.01822"
+     width="236.69511"
+     height="47.339024"
+     rx="6.5748639"
+     fill="#555555"
+     id="rect14"
+     style="stroke-width:1.31497" />
+  <text
+     x="417.09369"
+     y="442.68771"
+     class="box-text"
+     id="text15"
+     style="stroke-width:1.31497">DROPOUT 1</text>
+  <circle
+     cx="417.09369"
+     cy="517.64117"
+     fill="#ffffff"
+     stroke="#000000"
+     stroke-width="1.52735"
+     id="circle15"
+     r="15.273576" />
+  <line
+     x1="417.09369"
+     y1="507.12137"
+     x2="417.09369"
+     y2="528.16095"
+     stroke="#000000"
+     stroke-width="1.97246"
+     id="line15" />
+  <line
+     x1="406.57391"
+     y1="517.64117"
+     x2="427.61346"
+     y2="517.64117"
+     stroke="#000000"
+     stroke-width="1.97246"
+     id="line16" />
+  <rect
+     x="650.73077"
+     y="59.950184"
+     width="289.29401"
+     height="47.339024"
+     rx="6.5748639"
+     fill="#1c4567"
+     id="rect16"
+     style="stroke-width:1.31497" />
+  <text
+     x="795.37775"
+     y="83.619698"
+     class="box-text"
+     id="text16"
+     style="stroke-width:1.31497">EXTRAER ÚLTIMO PASO (day t)</text>
+  <rect
+     x="611.28156"
+     y="121.75391"
+     width="368.19241"
+     height="341.89294"
+     rx="10.519782"
+     fill="#fdf2e9"
+     stroke="#f39c12"
+     stroke-width="1.97246"
+     stroke-dasharray="4, 4"
+     id="rect17" />
+  <rect
+     x="650.73077"
+     y="148.05336"
+     width="289.29401"
+     height="47.339024"
+     rx="6.5748639"
+     fill="#3498db"
+     id="rect18"
+     style="stroke-width:1.31497" />
+  <text
+     x="795.37775"
+     y="171.72285"
+     class="box-text"
+     id="text19"
+     style="stroke-width:1.31497">LINEAR (FC1)</text>
+  <rect
+     x="650.73077"
+     y="226.95172"
+     width="289.29401"
+     height="47.339024"
+     rx="6.5748639"
+     fill="#e67e22"
+     id="rect19"
+     style="stroke-width:1.31497" />
+  <text
+     x="795.37775"
+     y="250.62123"
+     class="box-text"
+     id="text20"
+     style="stroke-width:1.31497">ELU ACTIVATION</text>
+  <rect
+     x="650.73077"
+     y="305.8501"
+     width="289.29401"
+     height="47.339024"
+     rx="6.5748639"
+     fill="#555555"
+     id="rect20"
+     style="stroke-width:1.31497" />
+  <text
+     x="795.37775"
+     y="329.51962"
+     class="box-text"
+     id="text21"
+     style="stroke-width:1.31497">DROPOUT 2</text>
+  <rect
+     x="650.73077"
+     y="384.74847"
+     width="289.29401"
+     height="47.339024"
+     rx="6.5748639"
+     fill="#3498db"
+     id="rect21"
+     style="stroke-width:1.31497" />
+  <text
+     x="795.37775"
+     y="408.418"
+     class="box-text"
+     id="text22"
+     style="stroke-width:1.31497">LINEAR (FC2)</text>
+  <rect
+     x="677.03021"
+     y="495.20621"
+     width="236.69511"
+     height="47.339024"
+     rx="6.5748639"
+     fill="#2b5c8f"
+     id="rect22"
+     style="stroke-width:1.31497" />
+  <text
+     x="795.37775"
+     y="518.87573"
+     class="box-text"
+     id="text23"
+     style="stroke-width:1.31497">OUTPUT</text>
+  <path
+     d="m 417.09369,111.31455 v 30.76414"
+     marker-end="url(#arrow)"
+     id="path23"
+     style="fill:none;stroke:#333333;stroke-width:2;stroke-dasharray:none" />
+  <path
+     d="M 417.09369,189.41771 V 235.7482"
+     marker-end="url(#arrow)"
+     id="path24"
+     style="fill:none;stroke:#333333;stroke-width:2;stroke-dasharray:none" />
+  <path
+     d="m 417.09369,393.4055 v 27.84091"
+     marker-end="url(#arrow)"
+     id="path25"
+     style="fill:none;stroke:#333333;stroke-width:2;stroke-dasharray:none" />
+  <path
+     d="m 417.09369,466.35722 v 31.55934"
+     marker-end="url(#arrow)"
+     id="path26"
+     style="fill:none;stroke:#333333;stroke-width:1.97246" />
+  <path
+     d="m 795.37777,107.2892 v 37.67152"
+     marker-end="url(#arrow)"
+     id="path30"
+     style="fill:none;stroke:#333333;stroke-width:2;stroke-dasharray:none" />
+  <path
+     d="m 795.37778,195.39239 v 31.55935"
+     marker-end="url(#arrow)"
+     id="path31"
+     style="fill:none;stroke:#333333;stroke-width:2;stroke-dasharray:none" />
+  <path
+     d="m 795.37778,274.29076 v 31.55935"
+     marker-end="url(#arrow)"
+     id="path32"
+     style="fill:none;stroke:#333333;stroke-width:2;stroke-dasharray:none" />
+  <path
+     d="m 795.37778,353.18912 v 31.55935"
+     marker-end="url(#arrow)"
+     id="path33"
+     style="fill:none;stroke:#333333;stroke-width:2;stroke-dasharray:none" />
+  <path
+     d="m 795.37778,463.64684 v 31.55935"
+     marker-end="url(#arrow)"
+     id="path34"
+     style="fill:none;stroke:#333333;stroke-width:2;stroke-dasharray:none" />
+  <text
+     xml:space="preserve"
+     id="text54"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8px;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue';writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect54);display:inline;fill:#000000" />
+  <path
+     style="fill:none;stroke:#333333;stroke-width:2;stroke-linecap:butt;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#arrow)"
+     d="m 432.36727,517.64115 h 137.14184 l -0.0531,-431.534624 h 81.27474"
+     id="path54" />
+  <text
+     x="1463.4857"
+     y="-30.256536"
+     class="annotation-title"
+     id="text34"
+     style="font-weight:bold;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#000000">ENTRADA 'x'</text>
+  <text
+     x="1463.4857"
+     y="-15.256536"
+     class="annotation"
+     id="text35"
+     style="font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#333333">Ratio Señal/Ruido muy bajo (Series Financieras Diarias)</text>
+  <text
+     x="321.14352"
+     y="131.0195"
+     class="dim"
+     text-anchor="middle"
+     id="text36"
+     style="font-style:italic;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#666666">[batch, lookback, n_features]</text>
+  <text
+     x="1463.4857"
+     y="54.743465"
+     class="annotation-title"
+     id="text37"
+     style="font-weight:bold;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#000000">Normalización antes de la LSTM</text>
+  <text
+     x="1463.4857"
+     y="69.743462"
+     class="annotation"
+     id="text38"
+     style="font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#333333">Estabiliza activaciones ante spikes de volatilidad.</text>
+  <text
+     x="424.36728"
+     y="217.912"
+     class="dim"
+     id="text40"
+     style="font-style:italic;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#666666">[batch, lookback, hidden]</text>
+  <text
+     x="1463.4857"
+     y="144.74347"
+     class="annotation-title"
+     id="text41"
+     style="font-weight:bold;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#000000">Capacidad Reducida (parsimonia)</text>
+  <text
+     x="1463.4857"
+     y="159.74347"
+     class="annotation"
+     id="text42"
+     style="font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#333333">Pesos recurrentes: Inicialización Ortogonal.</text>
+  <text
+     x="1463.4857"
+     y="174.74347"
+     class="annotation"
+     id="text43"
+     style="font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#333333">Forget Gate primado a 1.0 (Jozefowicz et al., 2015)</text>
+  <text
+     x="1463.4857"
+     y="249.74347"
+     class="annotation"
+     id="text44"
+     style="font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#333333">Tasa de dropout estándar post-LSTM</text>
+  <text
+     x="1463.4857"
+     y="309.74347"
+     class="annotation"
+     id="text45"
+     style="font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#333333">Suma de la proyección lineal identidad</text>
+  <text
+     x="801.56964"
+     y="135.51567"
+     class="dim"
+     id="text46"
+     style="font-style:italic;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#666666">[batch, hidden]</text>
+  <text
+     x="1503.4857"
+     y="457.74347"
+     class="annotation"
+     id="text47"
+     style="font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#333333">Bottleneck: 'hidden → hidden // 2'</text>
+  <text
+     x="1503.4857"
+     y="517.74347"
+     class="annotation"
+     id="text48"
+     style="font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#333333">ELU: Permite activaciones negativas para Log-Vol</text>
+  <text
+     x="1503.4857"
+     y="577.74347"
+     class="annotation"
+     id="text49"
+     style="font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#333333">Dropout suave: 'dropout / 2'</text>
+  <text
+     x="1503.4857"
+     y="637.74347"
+     class="annotation"
+     id="text50"
+     style="font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#333333">Proyección escalar: 'hidden // 2 → 1'</text>
+  <text
+     x="1463.4857"
+     y="729.74347"
+     class="annotation-title"
+     id="text51"
+     style="font-weight:bold;font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#000000">Log-Vol Estandarizado Predicho</text>
+  <text
+     x="930.78625"
+     y="525.64258"
+     class="annotation"
+     id="text52"
+     style="font-size:12px;font-family:'Helvetica Neue', Helvetica, Arial, sans-serif;fill:#333333">[batch]</text>
+  <text
+     xml:space="preserve"
+     id="text1"
+     style="font-size:8px;font-family:'Helvetica Neue';-inkscape-font-specification:'Helvetica Neue';writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect1);display:inline;fill:none;stroke:#333333;stroke-width:1.5;stroke-linejoin:round" />
+  <path
+     style="fill:none;stroke:#333333;stroke-width:2;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#arrow)"
+     d="M 417.09367,283.08722 V 313.5209"
+     id="path2" />
+  <path
+     style="fill:none;stroke:#333333;stroke-width:2;stroke-linejoin:round;stroke-dasharray:none;marker-end:url(#arrow)"
+     d="m 417.09369,212.58295 -139.45439,1e-5 v 306.30666 h 124.23192"
+     id="path3" />
+</svg>
